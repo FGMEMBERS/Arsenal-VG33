@@ -2,59 +2,82 @@
 
 <PropertyList>
 
- <sim include="Nasal/views.xml">
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D) David Megginson (FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+     <splash-texture>Aircraft/Arsenal-VG33/vg33-splash.png</splash-texture>
+    </startup>
+
+    <systems>
+      <electrical>
+        <path>Aircraft/j3cub/cub-electrical.xml</path>
+      </electrical>
+    </systems> 
+
+    <sound>
+      <path>Aircraft/Arsenal-VG33/Sounds/vg33-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Arsenal-VG33/Models/vg33.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Arsenal VG 33</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/vg33-menu.xml"/>
+
+  </sim>
+
+  <yasim>
+    <vg33>
+      <pilot-lb>180</pilot-lb>
+    </vg33>
+  </yasim>
+
+  <engines>
+    <engine>
+      <rpm type="double">700</rpm>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/vg33-keyboard.xml"/>
+  </input>
  
-  <author>BARANGER Emmanuel (3D) David Megginson (FDM)</author>
-  <aircraft-version>0.1</aircraft-version>
-  <status>Alpha</status>
-   
-  <fuel-fraction>0.8</fuel-fraction>
-  
-  <startup>
-   <splash-texture>Aircraft/Arsenal-VG33/vg33-splash.rgb</splash-texture>
-  </startup>
-  
-  <systems>
-   <electrical>
-    <path>Aircraft/j3cub/cub-electrical.xml</path>
-   </electrical>
-  </systems> 
-
-  <sound>
-   <path>Aircraft/Arsenal-VG33/Sounds/vg33-sound.xml</path>
-  </sound>
-
-  <panel>
-   <visibility archive="n">false</visibility>
-  </panel>
-
-  <model>
-   <path archive="y">Aircraft/Arsenal-VG33/Models/vg33.xml</path>
-  </model>
-
- </sim>
-
- <yasim>
-  <vg33>
-   <pilot-lb>180</pilot-lb>
-  </vg33>
- </yasim>
-
- <engines>
-  <engine>
-   <rpm type="double">700</rpm>
-  </engine>
- </engines>
-
- <input>
-  <keyboard include="Nasal/vg33-keyboard.xml"/>
- </input>
- 
- <nasal>
-   <vg33>
-     <file>Aircraft/Arsenal-VG33/Nasal/doors.nas</file>
-   </vg33>
- </nasal>
+  <nasal>
+    <vg33>
+      <file>Aircraft/Arsenal-VG33/Nasal/doors.nas</file>
+      <file>Aircraft/Arsenal-VG33/Nasal/immat.nas</file>
+      <file>Aircraft/Hughes-XF11/Nasal/liveries.nas</file>
+    </vg33>
+  </nasal>
 
 </PropertyList>
 

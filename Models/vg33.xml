@@ -4,12 +4,18 @@
 
   <path>vg33.ac</path>
 
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Arsenal-VG33/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
-    <object-name>interieur</object-name>
-    <object-name>pilote1</object-name>
-    <object-name>pilote2</object-name>
     <object-name>bol</object-name>
     <object-name>echappement</object-name>
     <object-name>helice</object-name>
@@ -54,27 +60,50 @@
     <object-name>propblur</object-name>
   </animation>
 
-  <!-- Pilote invisible depuis le cockpit -->
   <animation>
-    <type>select</type>
-    <object-name>pilote1</object-name>
-    <object-name>pilote2</object-name>
-    <condition>
-      <greater-than>
-        <property>sim/current-view/view-number</property>
-        <value>0</value>
-      </greater-than>
-    </condition>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>bol</object-name>
+    <object-name>echappement</object-name>
+    <object-name>helice</object-name>
+    <object-name>air</object-name>
+    <object-name>air2</object-name>
+    <object-name>armes</object-name>
+    <object-name>pito</object-name>
+    <object-name>cockpit</object-name>
+    <object-name>aile</object-name>
+    <object-name>aile2</object-name>
+    <object-name>derive</object-name>
+    <object-name>patte</object-name>
+    <object-name>axeGA</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>porteG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDA</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>porteD</object-name>
+    <object-name>roueD</object-name> 
+    <object-name>tourvitre</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
   </animation>
 
-  <!-- Planches de bord -->
-  <!-- Avant -->
+  <!-- Interieur -->
   <model>
-    <path>Aircraft/Arsenal-VG33/Models/Panel/panel.xml</path>
+    <path>Aircraft/Arsenal-VG33/Models/Interior/interior.xml</path>
     <offsets>
-      <x-m> -0.856 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.223 </z-m>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
     </offsets>
   </model>
 

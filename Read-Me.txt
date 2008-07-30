@@ -1,4 +1,4 @@
-English/Fran√ßais
+English/FranÁais
 
 [English]
 ----------
@@ -9,10 +9,10 @@ A little history
 Arsenal VG 33
 =============
 
-Manufacturer                  : Arsenal de l'A√©ronautique
+Manufacturer                  : Arsenal de l'AÈronautique
 Type                          : Fighter
 Year                          : 1938
-Powerplant                    : Hispano-Suiza 12Y-31 (860 hz)
+Powerplant                    : Hispano-Suiza 12Y-47 (860 hz)
 Wingspan                      : 10.80 m
 Length                        : 8.55 m
 Height                        : 3.55 m
@@ -35,7 +35,7 @@ http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
 
 
-[Fran√ßais]
+[FranÁais]
 ----------
 
 Un peu d'histoire
@@ -46,14 +46,14 @@ Arsenal VG 33
 
 Constructeur                  : Arsenal de l'A√©ronautique
 Type                          : Chasseur
-Ann√©e                         : 1938
-Moteur                        : Hispano-Suiza 12Y-31 (860 ch)
+AnnÈe                         : 1938
+Moteur                        : Hispano-Suiza 12Y-47 (860 ch)
 Envergure                     : 8,23 m
 Longueur                      : 7,747 m
 Hauteur                       : 2,232 m
-Poids estim√© au d√©collage     : 2050 kg
-Vitesse estim√©e de croisi√®re  : 558 km/h
-Autonomie estim√©e             : 1200 km
+Poids estimÈ au dÈcollage     : 2050 kg
+Vitesse max                   : 558 km/h
+Autonomie estimÈe             : 1200 km
 Equipage                      : 1
 
 
