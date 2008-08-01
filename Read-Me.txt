@@ -24,12 +24,15 @@ Crew                          : 1
 Some useful keys:
 =================
 
+d : open/close canopy
+
 Thanks
 ======
 
 ===============
 BARANGER Emmanuel
 Setpember, 28, 2007. 
+August, 01, 2008.
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
@@ -60,12 +63,15 @@ Equipage                      : 1
 Quelques touches utiles :
 =========================
 
+d : Ouverture/fermeture de la verrière
+
 Remerciements
 =============
 
 ===============
 BARANGER Emmanuel
 28 Septembre 2007.
+01 Août 2008.
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
