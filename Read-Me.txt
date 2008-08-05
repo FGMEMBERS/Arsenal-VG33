@@ -29,6 +29,8 @@ d : open/close canopy
 Thanks
 ======
 
+Laurent HAYVEL for texture
+
 ===============
 BARANGER Emmanuel
 Setpember, 28, 2007. 
@@ -67,6 +69,8 @@ d : Ouverture/fermeture de la verrière
 
 Remerciements
 =============
+
+Laurent HAYVEL pour la texture
 
 ===============
 BARANGER Emmanuel

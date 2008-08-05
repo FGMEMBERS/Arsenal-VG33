@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
-<!-- <PropertyList include="vg33-jsbsim-set.xml"> -->
-<PropertyList include="vg33-yasim-set.xml">
+<!-- <PropertyList include="vg33-jsbsim-cnf.xml"> -->
+<PropertyList include="vg33-yasim-cnf.xml">
 
   <sim>
     <description>Arsenal VG33</description>
-    <author>Emmanuel BARANGER (3D)</author>
+    <author>Emmanuel BARANGER (3D), Laurent HAYVEL (Texture)</author>
   </sim>
 
 </PropertyList>
