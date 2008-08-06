@@ -97,6 +97,72 @@
     <texture>texture.png</texture>
   </animation>
 
+  <!-- Effets de tir -->
+  <!-- Gauche extérieur -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -1.956 </x-m>
+      <y-m> -2.428 </y-m>
+      <z-m> -0.219 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> 180.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Gauche intérieur -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -1.985 </x-m>
+      <y-m> -2.308 </y-m>
+      <z-m> -0.225 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> 180.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Droite extérieur -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -1.958 </x-m>
+      <y-m>  2.428 </y-m>
+      <z-m> -0.219 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> 180.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Droite intérieur -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -1.985 </x-m>
+      <y-m>  2.308 </y-m>
+      <z-m> -0.225 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> 180.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Canon moteur -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/fire.xml</path>
+    <offsets>
+      <x-m> -4.030 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.043 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg> 180.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
   <!-- Interieur -->
   <model>
     <path>Aircraft/Arsenal-VG33/Models/Interior/interior.xml</path>
