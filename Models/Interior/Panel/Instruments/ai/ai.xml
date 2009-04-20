@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Attitude/Turn Indicator -->
-
 <PropertyList>
 
   <path>ai.ac</path>
 
   <animation>
     <object-name>fond</object-name>
-    <object-name>visse1</object-name>
-    <object-name>visse2</object-name>
-    <object-name>visse3</object-name>
-    <object-name>visse4</object-name>
+    <object-name>visses</object-name>
     <object-name>AttitudeBall</object-name>
     <object-name>FaceTurn</object-name>
     <object-name>BallTurn</object-name>
@@ -44,17 +39,17 @@
     <object-name>barre1</object-name>
     <object-name>barre2</object-name>
     <emission>
-      <red>   0.030 </red>
-      <green> 0.015 </green>
-      <blue>  0.005 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   1.0 </red>
+      <green> 0.2 </green>
+      <blue>  0.0 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>AttitudeBall</object-name>
-    <property>orientation/roll-deg</property>
+    <property>/orientation/roll-deg</property>
     <factor>1</factor>
     <center>
       <x-m>-0.030 </x-m>
@@ -71,7 +66,7 @@
   <animation>
     <type>rotate</type>
     <object-name>AttitudeBall</object-name>
-    <property>orientation/pitch-deg</property>
+    <property>/orientation/pitch-deg</property>
     <factor>1</factor>
     <center>
       <x-m> -0.030 </x-m>
@@ -88,7 +83,7 @@
   <animation>
     <type>rotate</type>
     <object-name>SkyPointer</object-name>
-    <property>orientation/roll-deg</property>
+    <property>/orientation/roll-deg</property>
     <factor>1</factor>
     <center>
       <x-m> 0.019 </x-m>

@@ -8,6 +8,8 @@
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
+    <object-name>inttourvitre</object-name>
+    <object-name>inttourverriere</object-name>
 
     <!-- Objets transparents -->
     <object-name>intverriere</object-name>
@@ -51,14 +53,20 @@
 
   <!-- Canopy -->
   <animation>
-    <type>translate</type>
+    <name>intCanopy</name>
+    <object-name>inttourverriere</object-name>
     <object-name>intverriere</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>intCanopy</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
     <factor> 0.75 </factor>
     <axis>
-      <x> 1.000 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
