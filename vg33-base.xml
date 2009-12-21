@@ -85,6 +85,7 @@
       <file>Aircraft/Arsenal-VG33/Nasal/doors.nas</file>
       <file>Aircraft/Arsenal-VG33/Nasal/immat.nas</file>
       <file>Aircraft/Arsenal-VG33/Nasal/liveries.nas</file>
+      <file>Aircraft/Arsenal-VG33/Nasal/light.nas</file>
     </vg33>
     <guns>
       <file>Aircraft/Arsenal-VG33/Nasal/weapons.nas</file>

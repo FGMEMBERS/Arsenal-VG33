@@ -2,7 +2,7 @@
 
 <!-- Arsenal VG33 - 2008 BARANGER Emmanuel 
 
-     2680 kg au décollage = 5908 lb
+     2680 kg au decollage = 5908 lb
      Envergure : 10.80 m
      Longueur  :  8.55 m
      Hauteur   :  3.28 m
@@ -25,7 +25,7 @@
     <solve-weight idx="1" weight="0"/>
   </cruise>
 
-  <cockpit x="-0.034" y="0" z="0.635"/>
+  <cockpit x="-0.034" y="0" z="0.730"/>
 
   <fuselage ax="4.198" ay="0.0" az="-0.043" bx="-4.198" by="0" bz="0.111" width="0.965" taper="0.3" midpoint="0.2"/>
 
@@ -33,12 +33,12 @@
         chord="2.00" 
         length="4.909" 
         taper="0.49" 
-	sweep="0.1" 
+	sweep="-2.5" 
 	dihedral="5.0" 
 	camber="0.01">
         <stall aoa="16" width="5" peak="1.5"/>
-        <flap0 start="0.13" end="0.513" lift="1.7" drag="1.9"/>
-        <flap1 start="0.513" end="0.942" lift="1.4" drag="1.1"/>
+        <flap0 start="0.05" end="0.42" lift="1.7" drag="1.9"/>
+        <flap1 start="0.42" end="0.85" lift="1.4" drag="1.1"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
@@ -55,7 +55,8 @@
   <hstab x="-2.977" y="0" z="0.247" 
 	 chord="1.130" 
 	 length="2.056" 
-         taper="0.51"> 
+         taper="0.51"
+         sweep="3"> 
          <stall aoa="16" width="8" peak="1.5"/>
          <flap0 start="0.0" end="1.0" lift="1.55" drag="1.3"/>
 
@@ -67,9 +68,9 @@
 
   <vstab x="-3.226" y="0" z="0.296" 
 	 chord="1.777" 
-	 length="1.437" 
+	 length="1.4" 
          taper="0.26" 
-	 sweep="15">
+	 sweep="17">
          <stall aoa="14" width="4" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
 
@@ -80,13 +81,13 @@
   </vstab>
 
   <!-- Hispano Suiza 12Y47 (760 ch)  
-       V12 60 degrés
+       V12 60 degres
        760 ch au sol
-       860 ch à 3850 m 
-       Poids : inconu (celui du HV220 sera utilisé soit 1124.3 lb          
+       860 ch a 3850 m 
+       Poids : inconnu (celui du HV220 sera utilise soit 1124.3 lb          
   -->
   <propeller x="2.605" y="0.0" z="-0.126"
-             radius="1.475"
+             radius="1.45"
              mass="1124"
              moment="35"
              cruise-speed="280"
@@ -150,7 +151,7 @@
   <weight x="0.75" y="0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
   <weight x="-1.0" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
 
-  <!-- CG théorique centre de la corde x=1.140 y=0.0 z=-0.400 -->
+  <!-- CG theorique centre de la corde x=1.140 y=0.0 z=-0.400 -->
   <ballast x="4.23" y="0.001" z="-3.16" mass="600" />
 
 </airplane>
