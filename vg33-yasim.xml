@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Arsenal VG33 - 2008 BARANGER Emmanuel 
+<!-- Arsenal VG33         : BARANGER Emmanuel (2008/2010) 
 
-     2680 kg au decollage = 5908 lb
-     Envergure : 10.80 m
-     Longueur  :  8.55 m
-     Hauteur   :  3.28 m
-     Moteur    : Hispano Suiza 12Y47 (860 ch)
--->
+     Sources              : http://en.wikipedia.org/wiki/Arsenal_VG-33
 
-<airplane mass="5908" >
+     Envergure            : 10.80 m       ( 35 ft  3 in )
+     Longueur             :  8.55 m       ( 28 ft  0 in )
+     Hauteur              :  3.31 m       ( 10 ft 10 in )
+     Masse a vide         :  2050 kg      ( 4519 lb     )
+     Moteur               : Hispano-Suiza 12Y31 supercharged liquid-cooled 60 deg V12 engine (860 hp)
+     Vitesse max          : 558 km/h      ( 301 kt ) 
+     Vitesse de croisiere : 518 km/h      ( 280 kt )
+--> 
+
+<airplane mass="4519" >
 
   <approach speed="80" aoa="4" >
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
@@ -27,14 +31,14 @@
 
   <cockpit x="-0.034" y="0" z="0.730"/>
 
-  <fuselage ax="4.198" ay="0.0" az="-0.043" bx="-4.198" by="0" bz="0.111" width="0.965" taper="0.3" midpoint="0.2"/>
+  <fuselage ax="3.776" ay="0" az="-0.043" bx="-4.198" by="0" bz="0.111" width="0.965" taper="0.3" midpoint="0.2"/>
 
   <wing x="1.140" y="0.470" z="-0.400" 
         chord="2.00" 
         length="4.909" 
         taper="0.49" 
 	sweep="-2.5" 
-	dihedral="5.0" 
+	dihedral="5" 
 	camber="0.01">
         <stall aoa="16" width="5" peak="1.5"/>
         <flap0 start="0.05" end="0.42" lift="1.7" drag="1.9"/>
@@ -80,26 +84,31 @@
          <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"  min="1" max="-1"/>
   </vstab>
 
-  <!-- Hispano Suiza 12Y47 (760 ch)  
-       V12 60 degres
-       760 ch au sol
-       860 ch a 3850 m 
-       Poids : inconnu (celui du HV220 sera utilise soit 1124.3 lb          
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Hispano-Suiza_12Y
+
+                 name              : Hispano-Suiza 12Y
+                 type              : Twelve-cylinder supercharged liquid-cooled 60 dg V12 engine
+                 power cruise      : 824 hp at 2400 rpm for takeoff
+                                   : 848 hp at 2400 rpm at 4000 m (13100 ft)
+                 displacement      : 36.05 l ( 2199.9 in3 )
+                 compression       : 5.8:1
+                 weight            : 465 kg  ( 1025 lb )
+
+                gear-ratio="0.5"
   -->
   <propeller x="2.605" y="0.0" z="-0.126"
              radius="1.45"
-             mass="1124"
+             mass="1024"
              moment="35"
              cruise-speed="280"
              cruise-alt="5000"
-             cruise-power="760"
-             cruise-rpm="1400"
-             takeoff-power="860"
-             takeoff-rpm="1600"
-             gear-ratio="0.5">
+             cruise-power="848"
+             cruise-rpm="2400"
+             takeoff-power="848"
+             takeoff-rpm="2400">
              <piston-engine eng-rpm="2400"
                             eng-power="860"
-                            displacement="1751"
+                            displacement="2199.9"
                             compression="5.8"/>
              <actionpt x="3.987" y="0.0" z="-0.043"/>
              <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
@@ -109,10 +118,13 @@
   </propeller>
 
   <!-- left main -->
-  <gear x="1.484" 
-        y="1.944" 
-        z="-1.629" 
-        compression=".4" retract-time="5" spring="0.8" damp="1.2" sfric="1.0" dfric="1.0">
+  <gear x="1.484" y="1.944" z="-1.629" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -123,10 +135,13 @@
   </gear>
 
   <!-- right main -->
-  <gear x="1.484" 
-        y="-1.944" 
-        z="-1.629" 
-        compression=".4" retract-time="5" spring="0.8" damp="1.2" sfric="1.0" dfric="1.0">
+  <gear x="1.484" y="-1.944" z="-1.629" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
         <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -137,21 +152,24 @@
   </gear>
 
   <!-- Tail wheel; has castering selectable by a wheel lock -->
-  <gear x="-3.682"
-        y="0"
-        z="-0.311"
-        compression="0.2" pring="0.8" damp="1.2" sfric="1.0" dfric="1.0">
+  <gear x="-3.682" y="0" z="-0.311"
+        compression="0.2"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
   </gear>
 
   <!-- Fuel  -->  
-  <tank x="1.5" y="0" z="-0.7" capacity="210" />
-  <tank x="0.0" y="0" z="-0.7" capacity="210" />
+  <tank x=" 1.5" y="0" z="-0.7" capacity="210" />
+  <tank x=" 0.0" y="0" z="-0.7" capacity="210" />
   <tank x="-1.5" y="0" z="-0.7" capacity="156" />
 
-  <weight x="0.75" y="0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
-  <weight x="-1.0" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
+  <weight x=" 0.75" y="0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="-1.00" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
 
   <!-- CG theorique centre de la corde x=1.140 y=0.0 z=-0.400 -->
   <ballast x="4.23" y="0.001" z="-3.16" mass="600" />
 
 </airplane>
+
