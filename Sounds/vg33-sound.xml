@@ -6,7 +6,7 @@
 
     <crank> 
       <name>engstart</name>
-      <path>Sounds/engstart.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/starter.wav</path>
       <property>/engines/engine/cranking</property>
       <volume> 
         <property>/orientation/alpha-deg</property>
@@ -21,10 +21,10 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
+<!--
     <crank> 
       <name>cough</name>
-      <path>Sounds/coughing.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/rpm1.wav</path>
       <property>/engines/engine/running</property>
       <volume> 
         <property>/orientation/alpha-deg</property>
@@ -39,11 +39,11 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
+-->
     <engine> 
       <name>engine idle rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_rpm1.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/rpm2.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
        <less-than> 
@@ -80,7 +80,7 @@
     <engine-2> 
       <name>engine low rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/spita.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/rpm3.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <greater-than-equals> 
@@ -114,11 +114,10 @@
       <max-dist>1000</max-dist>
     </engine-2>
 
-    <!-- -->
     <engine-4> 
       <name>engine high rpm</name>
       <mode>looped</mode>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_rpm4.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/rpm4.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <greater-than-equals> 
@@ -150,7 +149,7 @@
 
     <engine-0> 
       <name>engine shut down rpm</name>
-      <path>Aircraft/Arsenal-VG33/Sounds/merlin_shutdown.wav</path>
+      <path>Aircraft/Arsenal-VG33/Sounds/shutdown.wav</path>
       <condition> 
         <property>/engines/engine/running</property>
         <not> 
@@ -432,7 +431,7 @@
       </volume>
     </click>
 
-    <guns> 
+    <guns>
       <name>gunfire</name>
       <mode>looped</mode>
       <path>Aircraft/Arsenal-VG33/Sounds/gunfire_1.wav</path>

@@ -10,19 +10,14 @@
 
     <fuel-fraction>0.8</fuel-fraction>
 
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/Arsenal-VG33/Sounds/vg33-sound.xml</path>
+    </sound>
+
     <startup>
      <splash-texture>Aircraft/Arsenal-VG33/vg33-splash.png</splash-texture>
     </startup>
-
-    <systems>
-      <electrical>
-        <path>Aircraft/j3cub/cub-electrical.xml</path>
-      </electrical>
-    </systems> 
-
-    <sound>
-      <path>Aircraft/Arsenal-VG33/Sounds/vg33-sound.xml</path>
-    </sound>
 
     <model>
       <path archive="y">Aircraft/Arsenal-VG33/Models/vg33.xml</path>
@@ -33,7 +28,7 @@
 
     <submodels> 
       <serviceable type="bool">true</serviceable>
-      <path>Aircraft/Arsenal-VG33/Models/Effects/submodels.xml</path>
+      <path>Aircraft/Arsenal-VG33/Models/Effects/guns/submodels.xml</path>
     </submodels>
 
     <multiplay>
@@ -45,6 +40,8 @@
         <int type="int">0</int>
         <int type="int">0</int>
         <int type="int">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
       </generic>
     </multiplay>
 
@@ -75,6 +72,14 @@
       <rpm type="double">700</rpm>
     </engine>
   </engines>
+
+  <controls>
+    <armament>
+     <trigger type="bool">false</trigger>
+     <master-arm type="bool">true</master-arm>
+     <position-norm type="int">1</position-norm>
+    </armament>
+  </controls>
 
   <input>
     <keyboard include="Nasal/vg33-keyboard.xml"/>
