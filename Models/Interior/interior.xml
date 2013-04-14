@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -30,6 +30,16 @@
     <object-name>intverriere</object-name>
   </animation>
 
+    <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intverriere</object-name>
+  </effect>
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/Arsenal-VG33/Models/Pilot/pilot.xml</path>
@@ -59,9 +69,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>intCanopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>translate</type>
     <object-name>intCanopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 0.75 </factor>
     <axis>
       <x> 1 </x>
@@ -71,4 +95,3 @@
   </animation>
 
 </PropertyList>
-

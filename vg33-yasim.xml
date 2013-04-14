@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Arsenal VG33         : BARANGER Emmanuel (2008/2010) 
 
@@ -17,7 +17,7 @@
 
   <approach speed="80" aoa="4" >
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
     <solve-weight idx="0" weight="180"/>
     <solve-weight idx="1" weight="0"/>
   </approach>
@@ -37,9 +37,9 @@
         chord="2.00" 
         length="4.909" 
         taper="0.49" 
-	sweep="-2.5" 
-	dihedral="5" 
-	camber="0.01">
+        sweep="-2.5" 
+        dihedral="5" 
+        camber="0.01">
         <stall aoa="16" width="5" peak="1.5"/>
         <flap0 start="0.05" end="0.42" lift="1.7" drag="1.9"/>
         <flap1 start="0.42" end="0.85" lift="1.4" drag="1.1"/>
@@ -106,11 +106,11 @@
              cruise-rpm="2400"
              takeoff-power="848"
              takeoff-rpm="2400">
+             <actionpt x="3.987" y="0.0" z="-0.043"/>
              <piston-engine eng-rpm="2400"
                             eng-power="860"
                             displacement="2199.9"
                             compression="5.8"/>
-             <actionpt x="3.987" y="0.0" z="-0.043"/>
              <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
              <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
              <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
@@ -172,4 +172,3 @@
   <ballast x="4.23" y="0.001" z="-3.16" mass="600" />
 
 </airplane>
-

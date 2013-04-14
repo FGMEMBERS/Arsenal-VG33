@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/Arsenal-VG33/Models/Liveries", 10);
+      
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -17,25 +31,15 @@
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
     <object-name>bol</object-name>
-    <object-name>echappement</object-name>
-    <object-name>helice</object-name>
     <object-name>air</object-name>
     <object-name>air2</object-name>
-    <object-name>armes</object-name>
     <object-name>pito</object-name>
     <object-name>cockpit</object-name>
     <object-name>aile</object-name>
     <object-name>aile2</object-name>
     <object-name>derive</object-name>
-    <object-name>patte</object-name>
-    <object-name>axeGA</object-name>
-    <object-name>axeGB</object-name>
     <object-name>porteG</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDA</object-name>
-    <object-name>axeDB</object-name>
     <object-name>porteD</object-name>
-    <object-name>roueD</object-name> 
     <object-name>tourvitre</object-name>
     <object-name>tourverriere</object-name>
     <object-name>profondeur</object-name>
@@ -44,8 +48,19 @@
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletD</object-name>
-    <object-name>trous</object-name>
 
+    <object-name>trous</object-name>
+    <object-name>echappement</object-name>
+    <object-name>helice</object-name>
+    <object-name>armes</object-name>
+    <object-name>axeGA</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDA</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name> 
+    <object-name>patte</object-name>
+    
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
@@ -57,25 +72,15 @@
     <type>material</type>
     <object-name>fuselage</object-name>
     <object-name>bol</object-name>
-    <object-name>echappement</object-name>
-    <object-name>helice</object-name>
     <object-name>air</object-name>
     <object-name>air2</object-name>
-    <object-name>armes</object-name>
     <object-name>pito</object-name>
     <object-name>cockpit</object-name>
     <object-name>aile</object-name>
     <object-name>aile2</object-name>
     <object-name>derive</object-name>
-    <object-name>patte</object-name>
-    <object-name>axeGA</object-name>
-    <object-name>axeGB</object-name>
     <object-name>porteG</object-name>
-    <object-name>roueG</object-name>
-    <object-name>axeDA</object-name>
-    <object-name>axeDB</object-name>
     <object-name>porteD</object-name>
-    <object-name>roueD</object-name> 
     <object-name>tourvitre</object-name>
     <object-name>tourverriere</object-name>
     <object-name>profondeur</object-name>
@@ -84,44 +89,65 @@
     <object-name>aileronD</object-name>
     <object-name>voletG</object-name>
     <object-name>voletD</object-name>
+    
     <object-name>trous</object-name>
-
+    <object-name>echappement</object-name>
+    <object-name>helice</object-name>
+    <object-name>armes</object-name>
+    <object-name>axeGA</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeDA</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name> 
+    <object-name>patte</object-name>
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>bol</object-name>
+    <object-name>air</object-name>
+    <object-name>air2</object-name>
+    <object-name>pito</object-name>
+    <object-name>cockpit</object-name>
+    <object-name>aile</object-name>
+    <object-name>aile2</object-name>
+    <object-name>derive</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>tourvitre</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG</object-name>
+    <object-name>voletD</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>bol</object-name>
     <object-name>air</object-name>
@@ -159,23 +185,45 @@
     <object-name>propblur</object-name>
   </animation>
 
+    <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>verriere</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </effect>
+
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Arsenal-VG33/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.050 </z-m>
+    </offsets>
   </model>
 
+  <!-- Interieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/Arsenal-VG33/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
   <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
   </animation>
 
+  <!-- Cranking -->
+  <model>
+    <path>Aircraft/Arsenal-VG33/Models/Effects/cranking/all-cranking.xml</path>
+  </model>
+  
   <!-- Effets de tir -->
   <!-- Gauche extérieur -->
   <model>
@@ -273,16 +321,6 @@
     </offsets>
   </model>
 
-  <!-- Interieur -->
-  <model>
-    <path>Aircraft/Arsenal-VG33/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model>
-
   <!-- L'hélice --> 
   <animation>
     <name>HeliceComplete</name>
@@ -335,6 +373,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -592,9 +636,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>Canopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 0.75 </factor>
     <axis>
       <x> 1 </x>
@@ -623,6 +681,15 @@
   </model>
 
   <model>
+    <path>Aircraft/Arsenal-VG33/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -1.410 </x-m>
+      <y-m> -5.355 </y-m>
+      <z-m>  0.039 </z-m>
+    </offsets>
+  </model>
+
+  <model>
     <path>Aircraft/Arsenal-VG33/Models/light/GreenLight.xml</path>
     <offsets>
       <x-m> -1.430 </x-m>
@@ -632,22 +699,12 @@
   </model>
 
   <model>
-    <path>Aircraft/Arsenal-VG33/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/Arsenal-VG33/Models/light/StrobeLight.xml</path>
     <offsets>
-      <x-m> -1.420 </x-m>
-      <y-m> -5.355 </y-m>
-      <z-m>  0.039 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Arsenal-VG33/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m> -1.420 </x-m>
+      <x-m> -1.410 </x-m>
       <y-m>  5.355 </y-m>
       <z-m>  0.039 </z-m>
     </offsets>
   </model>
 
 </PropertyList>
-
