@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Arsenal VG33         : BARANGER Emmanuel (2008/2010) 
+
+     Sources              : http://en.wikipedia.org/wiki/Arsenal_VG-33
+
+     Envergure            : 10.80 m       ( 35 ft  3 in )
+     Longueur             :  8.55 m       ( 28 ft  0 in )
+     Hauteur              :  3.31 m       ( 10 ft 10 in )
+     Masse a vide         :  2050 kg      ( 4519 lb     )
+     Moteur               : Hispano-Suiza 12Y31 supercharged liquid-cooled 60 deg V12 engine (860 hp)
+     Vitesse max          : 558 km/h      ( 301 kt ) 
+     Vitesse de croisiere : 518 km/h      ( 280 kt )
+--> 
+
+<airplane mass="4519" >
+
+  <approach speed="80" aoa="4" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </approach>
+  
+  <cruise speed="280" alt="5000" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.8" />
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </cruise>
+
+  <cockpit x="-0.034" y="0" z="0.730"/>
+
+  <fuselage ax="3.776" ay="0" az="-0.043" bx="-4.198" by="0" bz="0.111" width="0.965" taper="0.3" midpoint="0.2"/>
+
+  <wing x="1.140" y="0.470" z="-0.400" 
+        chord="2.00" 
+        length="4.909" 
+        taper="0.49" 
+        sweep="-2.5" 
+        dihedral="5" 
+        camber="0.01">
+        <stall aoa="16" width="5" peak="1.5"/>
+        <flap0 start="0.05" end="0.42" lift="1.7" drag="1.9"/>
+        <flap1 start="0.42" end="0.85" lift="1.4" drag="1.1"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="7"/>
+        <control-speed control="FLAP1" transition-time="1"/>
+  </wing>
+  
+  <hstab x="-2.977" y="0" z="0.247" 
+	 chord="1.130" 
+	 length="2.056" 
+         taper="0.51"
+         sweep="3"> 
+         <stall aoa="16" width="8" peak="1.5"/>
+         <flap0 start="0.0" end="1.0" lift="1.55" drag="1.3"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.226" y="0" z="0.296" 
+	 chord="1.777" 
+	 length="1.4" 
+         taper="0.26" 
+	 sweep="17">
+         <stall aoa="14" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"  min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Hispano-Suiza_12Y
+
+                 name              : Hispano-Suiza 12Y
+                 type              : Twelve-cylinder supercharged liquid-cooled 60 dg V12 engine
+                 power cruise      : 824 hp at 2400 rpm for takeoff
+                                   : 848 hp at 2400 rpm at 4000 m (13100 ft)
+                 displacement      : 36.05 l ( 2199.9 in3 )
+                 compression       : 5.8:1
+                 weight            : 465 kg  ( 1025 lb )
+
+                gear-ratio="0.5"
+  -->
+  <propeller x="2.605" y="0.0" z="-0.126"
+             radius="1.45"
+             mass="1024"
+             moment="35"
+             cruise-speed="280"
+             cruise-alt="5000"
+             cruise-power="848"
+             cruise-rpm="2400"
+             takeoff-power="848"
+             takeoff-rpm="2400">
+             <actionpt x="3.987" y="0.0" z="-0.043"/>
+             <piston-engine eng-rpm="2400"
+                            eng-power="860"
+                            displacement="2199.9"
+                            compression="5.8"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+  </propeller>
+
+  <!-- left main -->
+  <gear x="1.484" y="1.944" z="-1.629" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="5.1"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="1.484" y="-1.944" z="-1.629" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="5.1"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- Tail wheel; has castering selectable by a wheel lock -->
+  <gear x="-3.682" y="0" z="-0.311"
+        compression="0.2"
+        spring="0.8"
+        damp="1.2"
+        sfric="1"
+        dfric="1">
+  </gear>
+
+  <!-- Fuel  -->  
+  <tank x=" 1.5" y="0" z="-0.7" capacity="210" />
+  <tank x=" 0.0" y="0" z="-0.7" capacity="210" />
+  <tank x="-1.5" y="0" z="-0.7" capacity="156" />
+
+  <weight x=" 0.75" y="0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="-1.00" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
+
+  <!-- CG theorique centre de la corde x=1.140 y=0.0 z=-0.400 -->
+  <ballast x="4.23" y="0.001" z="-3.16" mass="600" />
+
+</airplane>
