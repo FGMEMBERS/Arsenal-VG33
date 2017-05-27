@@ -10,6 +10,17 @@
     
     <flight-model>yasim</flight-model>
     <aero>vg33-yasim</aero>
+
+    <tags>
+      <tag>arsenal</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>fighter</tag>
+      <tag>ww2</tag>
+    </tags>
     
     <rating>
       <FDM type="int">     3 </FDM>
